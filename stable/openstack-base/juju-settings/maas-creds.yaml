@@ -2,4 +2,4 @@ credentials:
 	maas-one:
 		anyuser:
 			auth-type: oauth1
-			maas-oauth: 
+			maas-oauth: ./maas-api
