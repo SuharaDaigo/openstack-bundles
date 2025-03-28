@@ -1,5 +1,5 @@
 credentials:
-	maas-one:
-		anyuser:
-			auth-type: oauth1
-			maas-oauth: ./maas-api
+  maas-one:
+    anyuser:
+    auth-type: oauth1
+    maas-oauth: ./maas-api
