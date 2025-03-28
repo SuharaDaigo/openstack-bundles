@@ -7,17 +7,22 @@
 #       section of the [OpenStack Charms Deployment Guide](https://docs.openstack.org/project-deploy-guide/charm-deployment-guide/latest/)
 #       for more information.
 name: openstack-base
-series: focal
+base: 
+  - name: ubuntu
+    channel: 22.04
 variables:
-  openstack-origin: &openstack-origin cloud:focal-yoga
-  data-port: &data-port to-be-set
-  osd-devices: &osd-devices /dev/sdb /dev/vdb
+  openstack-origin: &openstack-origin distro
+  data-port: &data-port br-ex:eth0
+  osd-devices: &osd-devices /dev/sda
   expected-osd-count: &expected-osd-count 3
   expected-mon-count: &expected-mon-count 3
 machines:
   '0':
+    constraints: tags=compute spaces=public-space
   '1':
+    constraints: tags=compute spaces=public-space
   '2':
+    constraints: tags=compute spaces=public-space
 relations:
 - - nova-compute:amqp
   - rabbitmq-server:amqp
